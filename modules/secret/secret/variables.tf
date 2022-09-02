@@ -2,6 +2,7 @@ variable "secret" {
   type = object({
     name                      = string
     value_from_iap_credential = optional(string)
+    value_from_service_principal = optional(string)
   })
 }
 
@@ -15,4 +16,8 @@ variable "region" {
 
 variable "replica_region" {
   type = string
+}
+
+variable "azure_service_principal_credentials" {
+  type = map(any)
 }
