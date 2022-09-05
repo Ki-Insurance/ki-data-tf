@@ -1,7 +1,7 @@
 variable "secret" {
   type = object({
-    name                      = string
-    value_from_iap_credential = optional(string)
+    name                         = string
+    value_from_iap_credential    = optional(string)
     value_from_service_principal = optional(string)
   })
 }
