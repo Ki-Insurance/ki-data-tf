@@ -11,6 +11,11 @@ data "azuread_users" "owners" {
 resource "azuread_application" "main" {
   display_name = var.service_principal.name
   owners       = data.azuread_users.owners.object_ids
+  lifecycle {
+    ignore_changes = [
+      required_resource_access
+    ]
+  }
 }
 
 # Create Service Principal associated with the Azure AD App
