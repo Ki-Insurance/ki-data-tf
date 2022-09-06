@@ -4,7 +4,7 @@ variable "project" {
 
 variable "iam" {
   type = list(object({
-    kind     = string
+    resource = string
     bindings = map(list(string))
   }))
   default = []
