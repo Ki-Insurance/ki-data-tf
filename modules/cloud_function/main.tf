@@ -24,7 +24,6 @@ resource "google_cloudfunctions_function" "function" {
     for_each = { for secret_envs in coalesce(each.value.secret_environment_variables, []) : secret_envs.key => secret_envs }
     content {
       key        = secret_environment_variables.value.key
-      project_id = var.project
       secret     = secret_environment_variables.value.secret
       version    = "latest"
     }
